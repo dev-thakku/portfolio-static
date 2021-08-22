@@ -1,8 +1,270 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-.login-wraper{
+.login-wraper {
   height: 100vh;
   padding: 3rem;
 }
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+}
+
+.portfolio .portfolio-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.portfolio .portfolio-container.row::before,
+.portfolio .portfolio-container.row::after {
+  display: none;
+}
+
+.portfolio .portfolio-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: transparent;
+}
+
+.portfolio .portfolio-wrap::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+  bottom: 30px;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio .portfolio-wrap .portfolio-info::before {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  border-top: 3px solid #d7dce1;
+  border-left: 3px solid #d7dce1;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.portfolio .portfolio-wrap .portfolio-info::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
+  border-bottom: 3px solid #d7dce1;
+  border-right: 3px solid #d7dce1;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h3 {
+  cursor: default;
+  font-family: "poppins-bold", sans-serif;
+  font-weight: unset;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 {
+  cursor: default;
+  font-size: 20px;
+  color: #45505b;
+  font-weight: 600;
+}
+
+.portfolio .portfolio-wrap .portfolio-info p {
+  cursor: default;
+  color: #45505b;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio .portfolio-wrap .portfolio-links {
+  text-align: center;
+  z-index: 4;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+  color: #45505b;
+  margin: 10px 5px 0;
+  font-size: 28px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  color: #148af9;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:focus {
+  outline: none;
+}
+
+.portfolio .portfolio-wrap:hover::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info::before {
+  top: 15px;
+  left: 15px;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info::after {
+  bottom: 15px;
+  right: 15px;
+}
+
+@media (max-width: 425px) {
+  .portfolio .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+
+<!-- Portfolio Section -->
+    <section id="portfolio">
+      <div class="row section-intro">
+        <div class="col-twelve">
+          <h5>Portfolio</h5>
+          <h1>Check Out Some of My Works.</h1>
+
+          <p class="lead">Here are some of my projects.</p>
+        </div>
+      </div>
+      <!-- /section-intro-->
+
+      <div class="row portfolio-content">
+        <div class="col-twelve">
+          <!-- portfolio-wrapper -->
+          <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
+            <div class="bgrid folio-item">
+              <div class="item-wrap">
+                <img src="images/portfolio/amazon.png" alt="Amazon Clone" />
+                <a href="#modal-01" class="overlay">
+                  <div class="folio-item-table">
+                    <div class="folio-item-cell">
+                      <h3 class="folio-title">Amazon Clone</h3>
+                      <span class="folio-types">
+                        ReactJs &nbsp;|&nbsp;Firebase &nbsp;|&nbsp;Stripe
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /folio-item -->
+
+            <div class="bgrid folio-item">
+              <div class="item-wrap">
+                <img src="images/portfolio/netflix.png" alt="Netflix Clone" />
+                <a href="#modal-02" class="overlay">
+                  <div class="folio-item-table">
+                    <div class="folio-item-cell">
+                      <h3 class="folio-title">Netflix Clone</h3>
+                      <span class="folio-types">
+                        ReactJS &nbsp;|&nbsp;API
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /folio-item -->
+
+            <!-- folio-item -->
+            <div class="bgrid folio-item">
+              <div class="item-wrap">
+                <img src="images/portfolio/google.png" alt="Google Clone" />
+                <a href="#modal-03" class="overlay">
+                  <div class="folio-item-table">
+                    <div class="folio-item-cell">
+                      <h3 class="folio-title">Google Clone</h3>
+                      <span class="folio-types">
+                        ReactJS &nbsp;|&nbsp;Google Custom Search API
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /folio-item -->
+
+            <!-- folio-item -->
+            <div class="bgrid folio-item">
+              <div class="item-wrap">
+                <img src="images/portfolio/whatsapp.png" alt="Google Clone" />
+                <a href="#modal-04" class="overlay">
+                  <div class="folio-item-table">
+                    <div class="folio-item-cell">
+                      <h3 class="folio-title">Whatsapp Clone</h3>
+                      <span class="folio-types">
+                        NextJS &nbsp;|&nbsp;Firebase Authentication &nbsp;|&nbsp;Firebase Firestore
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /folio-item -->
+
+            <!-- folio-item -->
+            <div class="bgrid folio-item">
+              <div class="item-wrap">
+                <img src="images/portfolio/twitter.png" alt="Google Clone" />
+                <a href="#modal-05" class="overlay">
+                  <div class="folio-item-table">
+                    <div class="folio-item-cell">
+                      <h3 class="folio-title">Twiter Card Design</h3>
+                      <span class="folio-types">
+                        HTML &nbsp;|&nbsp; Vanila JS &nbsp;|&nbsp; CSS
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /folio-item -->
+
+
+*/

@@ -113,7 +113,7 @@
   /*----------------------------------------------------*/
   /*	Modal Popup
 	------------------------------------------------------*/
-  $(".item-wrap a").magnificPopup({
+  $(".item-wrap").magnificPopup({
     type: "inline",
     fixedContentPos: false,
     removalDelay: 300,
@@ -121,8 +121,16 @@
     mainClass: "mfp-fade",
   });
 
+    $(".item-wrap").on("click", function (e) {
+      $("body").css("overflow", "hidden");
+    });
+    $(".mfp-bg").on("click", function (e) {
+      $("body").css("overflow", "hidden");
+    });
+
   $(document).on("click", ".popup-modal-dismiss", function (e) {
     e.preventDefault();
+    $("body").css("overflow", "auto");
     $.magnificPopup.close();
   });
 

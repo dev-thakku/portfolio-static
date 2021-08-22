@@ -35,7 +35,8 @@
  * ------------------------------------------------------------------- 
  */
 @import url("fonts.css");
-@import url("font-awesome/css/font-awesome.min.css");
+/* @import url("font-awesome/css/all.min.css"); */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 @import url("micons/micons.css");
 
 /** 
@@ -200,6 +201,7 @@ b {
 }
 em,
 i {
+  font-size: inherit;
   font-family: "lora-italic", serif;
 }
 strong,
@@ -1505,16 +1507,6 @@ header .logo a span {
 .intro-content .button:focus {
   border-color: #cc005f;
 }
-.intro-content .button::after {
-  display: inline-block;
-  content: "\f107";
-  font-family: fontAwesome;
-  font-size: 1.6rem;
-  line-height: inherit;
-  text-align: center;
-  position: relative;
-  left: 1.2rem;
-}
 
 .intro-social {
   display: block;
@@ -1976,7 +1968,8 @@ header .logo a span {
   font-family: "poppins-regular", sans-serif;
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(34, 34, 34, 0.6);
+  font-weight: unset;
 }
 #portfolio .folio-item:hover .overlay {
   background: rgba(0, 0, 0, 0.8);
