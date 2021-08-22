@@ -2016,6 +2016,7 @@ header .logo a span {
 }
 .popup-modal .media {
   position: relative;
+  text-align: center;
 }
 .popup-modal img {
   vertical-align: bottom;
